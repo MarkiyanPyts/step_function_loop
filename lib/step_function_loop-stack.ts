@@ -62,7 +62,7 @@ export class StepFunctionJobStack extends cdk.Stack {
     const stateMachine = new sfn.StateMachine(this, 'JobStateMachine', {
       definitionBody: sfn.DefinitionBody.fromChainable(jobDefinition),
       timeout: cdk.Duration.minutes(15),
-      stateMachineType: sfn.StateMachineType.EXPRESS,
+      stateMachineType: sfn.StateMachineType.STANDARD,
       logs: {
         destination: logGroup,
         level: sfn.LogLevel.ALL,
